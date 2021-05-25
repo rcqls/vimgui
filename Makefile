@@ -26,8 +26,6 @@ CFLAGS+=-DCIMGUI_DEFINE_ENUMS_AND_STRUCTS=1
 CFLAGS+=-DIMGUI_DISABLE_OBSOLETE_FUNCTIONS=1
 CFLAGS+=-DIMGUI_IMPL_API
 
-lib: cimgui.$(DLL_EXT)
-
 all: thirdparty cimgui/make
 
 cimgui/make:
@@ -38,7 +36,7 @@ cimgui/cmake:
 	(export CFLAGS= CXXFLAGS= ; cd thirdparty/cimgui ; mkdir bld ; cd bld ; cmake .. ; make)
 	(mkdir -p lib; cp thirdparty/cimgui/bld/cimgui.$(DLL_EXT) lib/)
 
-thirdparty: thirdparty/cimgui thirdparty/sokol
+thirdparty: thirdparty/cimgui
 
 thirdparty/cimgui: 
 	(mkdir -p thirdparty)
