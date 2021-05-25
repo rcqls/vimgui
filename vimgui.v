@@ -1,5 +1,9 @@
 module vimgui
 
+pub const(
+	used_import = 1
+)
+
 #flag -I @VMODROOT/thirdparty/cimgui
  
 
